@@ -57,12 +57,48 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="css\style.css" />
+    <Content Include="images\black-bullet.jpg" />
+    <Content Include="images\bottom-round.jpg" />
+    <Content Include="images\bottom-round2.jpg" />
+    <Content Include="images\dottedline.jpg" />
+    <Content Include="images\footer.gif" />
+    <Content Include="images\footer.jpg" />
+    <Content Include="images\header.jpg" />
+    <Content Include="images\left-bottom.jpg" />
+    <Content Include="images\left-head.jpg" />
+    <Content Include="images\red-bullet.jpg" />
+    <Content Include="images\round-bullet.jpg" />
+    <Content Include="images\top-rept.jpg" />
+    <Content Include="images\top-round.jpg" />
+    <Content Include="images\top-round2.jpg" />
+    <Content Include="images\vline.jpg" />
+    <Content Include="index.html" />
+    <Content Include="template_4\css\style.css" />
+    <Content Include="template_4\images\black-bullet.jpg" />
+    <Content Include="template_4\images\bottom-round.jpg" />
+    <Content Include="template_4\images\bottom-round2.jpg" />
+    <Content Include="template_4\images\dottedline.jpg" />
+    <Content Include="template_4\images\footer.gif" />
+    <Content Include="template_4\images\footer.jpg" />
+    <Content Include="template_4\images\header.jpg" />
+    <Content Include="template_4\images\left-bottom.jpg" />
+    <Content Include="template_4\images\left-head.jpg" />
+    <Content Include="template_4\images\red-bullet.jpg" />
+    <Content Include="template_4\images\round-bullet.jpg" />
+    <Content Include="template_4\images\top-rept.jpg" />
+    <Content Include="template_4\images\top-round.jpg" />
+    <Content Include="template_4\images\top-round2.jpg" />
+    <Content Include="template_4\images\vline.jpg" />
+    <Content Include="template_4\index.html" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="images\Thumbs.db" />
+    <Content Include="template_4\images\Thumbs.db" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
