@@ -3,18 +3,35 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "counselling", "counselling\counselling.csproj", "{13AF2639-5824-4C95-B3B4-6736542586AF}"
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "OnlineCounselling(2)", "http://localhost:3931", "{8F96CAB9-CCEC-49F2-B226-867E322796AE}"
+	ProjectSection(WebsiteProperties) = preProject
+		UseIISExpress = "true"
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.5"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_3931"
+		Debug.AspNetCompiler.PhysicalPath = "..\..\Visual Studio 2013\WebSites\OnlineCounselling\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_3931\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_3931"
+		Release.AspNetCompiler.PhysicalPath = "..\..\Visual Studio 2013\WebSites\OnlineCounselling\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_3931\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		SlnRelativePath = "..\..\Visual Studio 2013\WebSites\OnlineCounselling\"
+		DefaultWebSiteLanguage = "Visual C#"
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
-		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{13AF2639-5824-4C95-B3B4-6736542586AF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{13AF2639-5824-4C95-B3B4-6736542586AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{13AF2639-5824-4C95-B3B4-6736542586AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{13AF2639-5824-4C95-B3B4-6736542586AF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8F96CAB9-CCEC-49F2-B226-867E322796AE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8F96CAB9-CCEC-49F2-B226-867E322796AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
