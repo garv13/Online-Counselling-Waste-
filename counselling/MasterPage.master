@@ -4,74 +4,121 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<link href="style.css" rel="stylesheet" type="text/css" />
+    <head>
+		<meta charset="UTF-8">
+		<title>BridgeBreakers</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<!--[if lte IE 8]><script src="js/html5shiv.js"></script><![endif]-->
+		<script src="js/jquery.min.js"></script>
+		<script src="js/skel.min.js"></script>
+		<script src="js/skel-layers.min.js"></script>
+		<script src="js/init.js"></script>
+		<noscript>
+			<link rel="stylesheet" href="css/skel.css" />
+			<link rel="stylesheet" href="css/style.css" />
+			<link rel="stylesheet" href="css/style-xlarge.css" />
+		</noscript>
+	</head>
     <asp:ContentPlaceHolder id="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
 <body>
     <form id="form1" runat="server">
-        <div id="header_wrapper">
-  <div id="header">
-    <div id="site_title">
-      <h1><a href="#"> <img src="images/logo.png" alt="" /> <span>free css templates</span> </a></h1>
-    </div>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla aliquet, ipsum bibendum pretium volutpat, diam magna facilisis ante.</p>
-  </div>
-  <!-- end of header -->
-</div>
-<!-- end of menu_wrapper -->
-<div id="menu_wrapper">
-  <div id="menu">
-    <ul>
-      <li><a href="#" class="current">Home</a></li>
-      <li><a href="#">Templates</a></li>
-      <li><a href="#">Flash Files</a></li>
-      <li><a href="#">Gallery</a></li>
-      <li><a href="#">Members</a></li>
-      <li><a href="#">Contact</a></li>
-    </ul>
-  </div>
-    </div>
-  <div id="content_wrapper">
-  <div id="sidebar">
-      
-    <div class="sidebar_box">
-        &nbsp;<asp:Label ID="Label1" runat="server" Text="Label" style="font-size:x-large"></asp:Label>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <asp:Button ID="Button1" runat="server" Text="Button" OnClick="Button1_Click" />
-        &nbsp;<h2>Announcements</h2>
-      <div class="news_box"> <a href="#">Fusce sit amet nunc lectus, at pretium augue. Pellentesque tortor felis.</a>
-        <p class="post_info">Posted by <a href="#">Admin</a> on <span>April 30, 2048</span></p>
-      </div>
-      <div class="news_box"> <a href="#">Integer imperdiet, justo ut venenatis vehicula, magna mi placerat felis.</a>
-        <p class="post_info">Posted by <a href="#">Admin</a> on <span>April 22, 2048</span></p>
-      </div>
-      <div class="news_box"> <a href="#">Sed justo dolor, convallis at, vestibulum vitae, elementum eu, pede.</a>
-        <p class="post_info">Posted by <a href="#">Admin</a> on <span>April 14, 2048</span></p>
-      </div>
-    </div>
-      </div>
-      <div id="content">
-    <div class="content_box">
-        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+    <header id="header">
+				<h1><a href="index.html">Transit</a></h1>
+				<nav id="nav">
+					<ul>
+						<li><a href="Home.aspx">Home</a></li>
+						<li><a href="generic.html">Generic</a></li>
+						<li><a href="elements.html">Elements</a></li>
+                        <li>
+
+                        <asp:Button ID="Button1" runat="server" Text="Login" class="button" OnClick="Button1_Click" CausesValidation="False" PostBackUrl="~/Login.aspx" />
+                        <li><a href="RegistrationPage.aspx" class="button special">Sign Up</a></li>
+                    <asp:Label ID="Label1" runat="server" Text="Welcome Guest" ForeColor="White" Font-Size="X-Large"></asp:Label>
+
+                        </ul>
+				</nav>
+			</header>
+
+<asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
         
-        </asp:ContentPlaceHolder></div>
-          </div>
-      </div>
- 
-    <div id="footer_wrapper">
-  <div id="footer">
-    <ul class="footer_menu">
-      <li><a href="#">Home</a></li>
-      <li><a href="#">Templates</a></li>
-      <li><a href="#">Flash Files</a></li>
-      <li><a href="#">Gallery</a></li>
-      <li><a href="#">Members</a></li>
-      <li class="last_menu"><a href="#">Contact Us</a></li>
-    </ul>
-    Copyright &copy; 2048 <a href="#">Your Company Name</a> | Designed by <a target="_blank" rel="nofollow" href="http://www.templatemo.com">templatemo</a></div>
-</div>
-           </form>
+        </asp:ContentPlaceHolder>
+    <footer id="footer">
+				<div class="container">
+					<section class="links">
+						<div class="row">
+							<section class="3u 6u(medium) 12u$(small)">
+								<h3>Lorem ipsum dolor</h3>
+								<ul class="unstyled">
+									<li><a href="#">Lorem ipsum dolor sit</a></li>
+									<li><a href="#">Nesciunt itaque, alias possimus</a></li>
+									<li><a href="#">Optio rerum beatae autem</a></li>
+									<li><a href="#">Nostrum nemo dolorum facilis</a></li>
+									<li><a href="#">Quo fugit dolor totam</a></li>
+								</ul>
+							</section>
+							<section class="3u 6u$(medium) 12u$(small)">
+								<h3>Culpa quia, nesciunt</h3>
+								<ul class="unstyled">
+									<li><a href="#">Lorem ipsum dolor sit</a></li>
+									<li><a href="#">Reiciendis dicta laboriosam enim</a></li>
+									<li><a href="#">Corporis, non aut rerum</a></li>
+									<li><a href="#">Laboriosam nulla voluptas, harum</a></li>
+									<li><a href="#">Facere eligendi, inventore dolor</a></li>
+								</ul>
+							</section>
+							<section class="3u 6u(medium) 12u$(small)">
+								<h3>Neque, dolore, facere</h3>
+								<ul class="unstyled">
+									<li><a href="#">Lorem ipsum dolor sit</a></li>
+									<li><a href="#">Distinctio, inventore quidem nesciunt</a></li>
+									<li><a href="#">Explicabo inventore itaque autem</a></li>
+									<li><a href="#">Aperiam harum, sint quibusdam</a></li>
+									<li><a href="#">Labore excepturi assumenda</a></li>
+								</ul>
+							</section>
+							<section class="3u$ 6u$(medium) 12u$(small)">
+								<h3>Illum, tempori, saepe</h3>
+								<ul class="unstyled">
+									<li><a href="#">Lorem ipsum dolor sit</a></li>
+									<li><a href="#">Recusandae, culpa necessita nam</a></li>
+									<li><a href="#">Cupiditate, debitis adipisci blandi</a></li>
+									<li><a href="#">Tempore nam, enim quia</a></li>
+									<li><a href="#">Explicabo molestiae dolor labore</a></li>
+								</ul>
+							</section>
+						</div>
+					</section>
+					<div class="row">
+						<div class="8u 12u$(medium)">
+							<ul class="copyright">
+								<li>&copy; Nitesh Sahni. All rights reserved.</li>
+								<li>Design: <a href="http://templated.co">TEMPLATED</a></li>
+								<li>Images: <a href="http://unsplash.com">Unsplash</a></li>
+							</ul>
+						</div>
+						<div class="4u$ 12u$(medium)">
+							<ul class="icons">
+								<li>
+									<a href="https://www.facebook.com/nsniteshsahni" class="icon rounded fa-facebook"><span class="label">Facebook</span></a>
+								</li>
+								<li>
+									<a href="https://www.twitter.com/nsniteshsahni" class="icon rounded fa-twitter"><span class="label">Twitter</span></a>
+								</li>
+								<li>
+									<a href="https://plus.google.com/u/0/+NiteshSahni007/posts" class="icon rounded fa-google-plus"><span class="label">Google+</span></a>
+								</li>
+								<li>
+									<a href="https://in.linkedin.com/pub/nitesh-sahni/a3/226/1b8" class="icon rounded fa-linkedin"><span class="label">LinkedIn</span></a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</footer>
+    </form>
 </body>
 </html>
