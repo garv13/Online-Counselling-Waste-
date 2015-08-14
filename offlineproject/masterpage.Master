@@ -1,0 +1,90 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="masterpage.master.cs" Inherits="offlineproject.masterpage" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>National University</title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<link href="default.css" rel="stylesheet" type="text/css" media="screen" />
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+        <div><div id="header">
+	<div id="logo">
+		<h1 style="margin-left:139px; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;text-transform:capitalize; width: 456px; height: 71px; font-size:50px">  National University </h1>
+	</div>
+        <div id="search">
+	<!-- login button -->	
+	        <br />
+            <br />
+            <asp:Label ID="Label1" runat="server" Text="Label" Font-Size="16px"></asp:Label>
+            <asp:Button ID="Button1" runat="server" Text="" onclick="Button1_Click" CssClass="Button"/>
+	</div>
+</div>
+
+<!-- end header -->
+<!-- start menu -->
+<div id="menu">
+	<ul>
+		<li class="current_page_item"><a href="#">Homepage</a></li>
+		<li><a href="#">Blogs</a></li>
+		<li><a href="#">Photos</a></li>
+		<li><a href="#">About</a></li>
+		<li><a href="#">Contact</a></li>
+	</ul>
+</div>
+<!-- end menu -->
+<!-- start page -->
+<div id="page">
+	<!-- start content -->
+	<div id="content">
+		
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+		
+		
+	</div>
+	<!-- end content -->
+	<!-- start sidebar -->
+	<div id="sidebar">
+		<ul>
+			<li>
+				<h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Notices</h2>
+				<div>
+                    <marquee direction="down" repeat="true" style="height: 219px">
+                <ol>
+					<li><a >Result Of First will be shown on 14 August 2015 </a></li>
+					<li><a >For Management Quata ,Contact Institutes Directors/Incharge(s) </a></li>
+					<li><a >Couselling will Be Done on Basis Of Prefrence List</a></li>
+					<li><a >College  Seat Matrix is shown on College Status Page</a></li>
+					<li><a >Students Are Requested to Submit Rs.1000 for Next Couselling Participation</a></li>
+					
+				</ol></marquee>
+                    </div>
+
+				
+			</li>
+
+		</ul>
+	</div>
+	<!-- end sidebar -->
+	<div style="clear: both;">&nbsp;</div>
+</div>
+<!-- end page -->
+<div id="footer">
+	<p>&copy;2007 All Rights Reserved. &nbsp;&bull;&nbsp; Design by bull;&nbsp; Design by  by bull;&nbsp; Design by <a href="http://www.freecsstemplates.org/">Free CSS Templates</a> &nbsp;&bull;&nbsp; Icons by <a href="http://www.famfamfam.com/">FAMFAMFAM</a>.</p>
+</div>
+
+        
+    </div>
+    </div>
+    </form>
+</body>
+</html>
