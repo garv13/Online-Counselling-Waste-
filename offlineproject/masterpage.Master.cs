@@ -17,22 +17,22 @@ namespace offlineproject
                 if (Session["login"] != null)
                 {
                     Label1.Text = "Welcome " + Session["login"].ToString();
-                    Button1.Text = "Log Out";
+                    logb.Text = "Log Out";
                 }
                 else
                 {
                     Label1.Text = "Welcome Guest ";
-                    Button1.Text = "Log In";
+                    logb.Text = "Log In";
                 }
             }
         }
-        protected void Button1_Click(object sender, EventArgs e)
+        protected void logb_Click(object sender, EventArgs e)
         {
-            if (Button1.Text.Equals("Log In"))
+            if (logb.Text.Equals("Log In"))
             {
                 Response.Redirect("~/login.aspx");
             }
-            else if (Button1.Text.Equals("Log Out"))
+            else if (logb.Text.Equals("Log Out"))
             {
                 Session.Abandon();
                 Session.Clear();

@@ -1,5 +1,8 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
+using System.Configuration;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -86,7 +89,7 @@ namespace offlineproject
         {
 
 
-            string s = Label11.Text + "-" + DropDownList1.SelectedItem.ToString();
+            string s = Label11.Text + "-" + DropDownList1.SelectedValue.ToString();
             add(s);
             DropDownList1.ClearSelection();
             DropDownList2.ClearSelection();
@@ -101,7 +104,7 @@ namespace offlineproject
         }
         protected void Button7_Click(object sender, EventArgs e)
         {
-            string s2 = Label12.Text + "-" + DropDownList2.SelectedItem.ToString();
+            string s2 = Label12.Text + "-" + DropDownList2.SelectedValue.ToString();
             add(s2);
             DropDownList1.ClearSelection();
             DropDownList2.ClearSelection();
@@ -116,7 +119,7 @@ namespace offlineproject
         }
         protected void Button8_Click(object sender, EventArgs e)
         {
-            string s3 = Label13.Text + "-" + DropDownList3.SelectedItem.ToString();
+            string s3 = Label13.Text + "-" + DropDownList3.SelectedValue.ToString();
             add(s3);
             DropDownList1.ClearSelection();
             DropDownList2.ClearSelection();
@@ -131,7 +134,7 @@ namespace offlineproject
         }
         protected void Button9_Click(object sender, EventArgs e)
         {
-            string s4 = Label14.Text + "-" + DropDownList4.SelectedItem.ToString();
+            string s4 = Label14.Text + "-" + DropDownList4.SelectedValue.ToString();
             add(s4);
             DropDownList1.ClearSelection();
             DropDownList2.ClearSelection();
@@ -146,7 +149,7 @@ namespace offlineproject
         }
         protected void Button10_Click(object sender, EventArgs e)
         {
-            string s5 = Label15.Text + "-" + DropDownList5.SelectedItem.ToString();
+            string s5 = Label15.Text + "-" + DropDownList5.SelectedValue.ToString();
             add(s5);
             DropDownList1.ClearSelection();
             DropDownList2.ClearSelection();
@@ -161,7 +164,7 @@ namespace offlineproject
         }
         protected void Button11_Click(object sender, EventArgs e)
         {
-            string s6 = Label16.Text + "-" + DropDownList6.SelectedItem.ToString();
+            string s6 = Label16.Text + "-" + DropDownList6.SelectedValue.ToString();
             add(s6);
             DropDownList1.ClearSelection();
             DropDownList2.ClearSelection();
@@ -176,7 +179,7 @@ namespace offlineproject
         }
         protected void Button14_Click(object sender, EventArgs e)
         {
-            string s10 = Label20.Text + "-" + DropDownList10.SelectedItem.ToString();
+            string s10 = Label20.Text + "-" + DropDownList10.SelectedValue.ToString();
             add(s10);
             DropDownList1.ClearSelection();
             DropDownList2.ClearSelection();
@@ -191,7 +194,7 @@ namespace offlineproject
         }
         protected void Button12_Click(object sender, EventArgs e)
         {
-            string s7 = Label17.Text + "-" + DropDownList7.SelectedItem.ToString();
+            string s7 = Label17.Text + "-" + DropDownList7.SelectedValue.ToString();
             add(s7);
             DropDownList1.ClearSelection();
             DropDownList2.ClearSelection();
@@ -206,7 +209,7 @@ namespace offlineproject
         }
         protected void Button13_Click(object sender, EventArgs e)
         {
-            string s8 = Label18.Text + "-" + DropDownList8.SelectedItem.ToString();
+            string s8 = Label18.Text + "-" + DropDownList8.SelectedValue.ToString();
             add(s8);
             DropDownList1.ClearSelection();
             DropDownList2.ClearSelection();
@@ -221,7 +224,7 @@ namespace offlineproject
         }
         protected void Button5_Click(object sender, EventArgs e)
         {
-            string s9 = Label19.Text + "-" + DropDownList9.SelectedItem.ToString();
+            string s9 = Label19.Text + "-" + DropDownList9.SelectedValue.ToString();
             add(s9);
             DropDownList1.ClearSelection();
             DropDownList2.ClearSelection();
@@ -311,19 +314,48 @@ namespace offlineproject
         }
         protected void Button2_Click(object sender, EventArgs e)
         {
-            int j = 0;
-            for (int i = 0; i < 10; i++)
+            int flag = 0;
+            for (int j = 0; j < 10; j++)
             {
 
-                i = j - 1;
-                Label lbl = new Label();
-                Label lb = new Label();
-                lbl.ID = "Label" + i;
-                lb.ID = "Label" + j;
-                if (lb.Text.Equals(lbl.Text))
+                for (int i = 0; i < 10; i++)
                 {
-                    Response.Write("<script> alert('Same Values In Prefrence List')</script>"); Response.Write("<script>alert('Data Inserted')</script>");
+
+                    //  i = j - 1;
+                    Label lbl = new Label();
+                    Label lb = new Label();
+                    lbl.ID = "Label" + i;
+                    lb.ID = "Label" + j;
+                    if (lb.Text.Equals(lbl.Text)&& lb.Text != null)
+                    {
+                        Label21.Text = " Same Colleges Are selcted , Please Edit list";
+                        Label21.Visible = true;
+                        flag = 1;
+                    }
                 }
+            }
+            if(flag==1)
+            {
+                collegeSelected c = new collegeSelected();
+                c.op1 = Label1.Text;
+                c.op2 = Label2.Text;
+                c.op3 = Label3.Text;
+                c.op4 = Label4.Text;
+                c.op5 = Label5.Text;
+                c.op6 = Label6.Text;
+                c.op7 = Label7.Text;
+                c.op8 = Label8.Text;
+                c.op9 = Label9.Text;
+                c.op10 = Label10.Text;
+                string json = JsonConvert.SerializeObject(c);
+                string p = Session["login"].ToString();
+                string s = ConfigurationManager.ConnectionStrings["connection"].ConnectionString;
+                SqlConnection con = new SqlConnection(s);
+                SqlCommand cmd = new SqlCommand("Update Student set selected = '"+json+"'  where rollno = '"+p+"' ", con);
+                con.Open();
+                cmd.ExecuteNonQuery();
+                con.Close();
+                Response.Redirect("Show.aspx");
             }
         }
     }

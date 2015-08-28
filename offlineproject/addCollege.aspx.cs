@@ -149,7 +149,7 @@ namespace offlineproject
             c.op10 = "lol0";
           string json = JsonConvert.SerializeObject(c);
           string s = ConfigurationManager.ConnectionStrings["connect"].ConnectionString;
-          int a = 1;
+        //  int a = 1;
           SqlConnection con = new SqlConnection(s);
           SqlCommand cmd = new SqlCommand("insert into Student values(@rollno,@firstName,@lastName,@age,@mobile,@email,@rank,@allot,@freeze,@selected)", con);
           cmd.Parameters.AddWithValue("@rollno", "12345lowadlfsroll");

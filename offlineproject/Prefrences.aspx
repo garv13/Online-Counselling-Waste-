@@ -112,7 +112,7 @@
             </td>
             <td>
                 <asp:DropDownList ID="DropDownList1" runat="server">
-                    <asp:ListItem>Please Select</asp:ListItem>
+                    <asp:ListItem Value="Not Selected">Please Select</asp:ListItem>
                     <asp:ListItem Value="CSE">Computer Science</asp:ListItem>
                     <asp:ListItem Value="IT">Information Technology</asp:ListItem>
                     <asp:ListItem Value="ECE">Electronic and Communication</asp:ListItem>

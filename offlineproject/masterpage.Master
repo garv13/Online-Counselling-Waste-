@@ -24,7 +24,7 @@
 	        <br />
             <br />
             <asp:Label ID="Label1" runat="server" Text="Label" Font-Size="16px"></asp:Label>
-            <asp:Button ID="Button1" runat="server" Text="" onclick="Button1_Click" CssClass="Button"/>
+            <asp:Button ID="logb" runat="server" Text="" OnClick="logb_Click" CssClass="Button"/>
 	</div>
 </div>
 
@@ -32,9 +32,9 @@
 <!-- start menu -->
 <div id="menu">
 	<ul>
-		<li class="current_page_item"><a href="#">Homepage</a></li>
-		<li><a href="#">Blogs</a></li>
-		<li><a href="#">Photos</a></li>
+		<li class="current_page_item"><a href="Home.aspx">Home</a></li>
+		<li><a href="info.aspx">Information</a></li>
+		<!-- <li><a href="#">Photos</a></li> -->
 		<li><a href="#">About</a></li>
 		<li><a href="#">Contact</a></li>
 	</ul>
@@ -56,15 +56,15 @@
 	<div id="sidebar">
 		<ul>
 			<li>
-				<h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Notices</h2>
+				<h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Notices & News</h2>
 				<div>
-                    <marquee direction="down" repeat="true" style="height: 219px">
+                    <marquee direction="up" repeat="true" style="height: 220px">
                 <ol>
-					<li><a >Result Of First will be shown on 14 August 2015 </a></li>
+					<li><a >Result Of First Counselling will be shown on 14 August 2015 </a></li>
 					<li><a >For Management Quata ,Contact Institutes Directors/Incharge(s) </a></li>
 					<li><a >Couselling will Be Done on Basis Of Prefrence List</a></li>
 					<li><a >College  Seat Matrix is shown on College Status Page</a></li>
-					<li><a >Students Are Requested to Submit Rs.1000 for Next Couselling Participation</a></li>
+					<li><a >Students Are Requested to Submit Rs.1000 for Participation In Next Counselling</a></li>
 					
 				</ol></marquee>
                     </div>
@@ -79,7 +79,7 @@
 </div>
 <!-- end page -->
 <div id="footer">
-	<p>&copy;2007 All Rights Reserved. &nbsp;&bull;&nbsp; Design by bull;&nbsp; Design by  by bull;&nbsp; Design by <a href="http://www.freecsstemplates.org/">Free CSS Templates</a> &nbsp;&bull;&nbsp; Icons by <a href="http://www.famfamfam.com/">FAMFAMFAM</a>.</p>
+	<p>&copy;2015 All Rights Reserved. &nbsp;&bull;&nbsp; Designed by GLNV</p>
 </div>
 
         

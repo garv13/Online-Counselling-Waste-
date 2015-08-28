@@ -24,7 +24,7 @@ namespace offlineproject
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            string s = ConfigurationManager.ConnectionStrings["connect"].ConnectionString;
+            string s = ConfigurationManager.ConnectionStrings["connection"].ConnectionString;
             SqlConnection con = new SqlConnection(s);
             con.Open();
             con.Close();
@@ -69,7 +69,7 @@ namespace offlineproject
         }
         protected void Button3_Click(object sender, EventArgs e)
         {
-            string s = ConfigurationManager.ConnectionStrings["connect"].ConnectionString;
+            string s = ConfigurationManager.ConnectionStrings["connection"].ConnectionString;
             SqlConnection con = new SqlConnection(s);
             SqlCommand cmd = new SqlCommand("Delete from College values('@seats') Where name = '@name' And branch = '@branch'", con);
             cmd.Parameters.AddWithValue("name", DropDownList1.SelectedValue);
@@ -82,7 +82,7 @@ namespace offlineproject
             else
                 Response.Write("<script>alert('Error..... Can't Delete ');</script>");
         }
-        string s;
+       // string s;
         int c = 0;
         protected void resultCalc(object sender, EventArgs e)
         {
@@ -99,9 +99,9 @@ namespace offlineproject
                         while (c<10)
                         {
                             c++;
-                            if (obj.op1 == namecoll[i])
+                            if (obj.op1 == namecoll[c].ToString())
                             {
-                                if (seatsleft[c] != "0")
+                                if (seatsleft[c].ToString() != "0")
                                 {
                                     int se = int.Parse(seatsleft[c].ToString());
                                     se--;
@@ -131,9 +131,9 @@ namespace offlineproject
                     while (c < 10)
                     {
                         c++;
-                        if (obj.op2 == namecoll[i])
+                        if (obj.op2 == namecoll[c].ToString())
                         {
-                            if (seatsleft[c] != "0")
+                            if (seatsleft[c].ToString() != "0")
                             {
                                 int se = int.Parse(seatsleft[c].ToString());
                                 se--;
@@ -163,9 +163,9 @@ namespace offlineproject
                     while (c < 10)
                     {
                         c++;
-                        if (obj.op3 == namecoll[i])
+                        if (obj.op3 == namecoll[c].ToString())
                         {
-                            if (seatsleft[c] != "0")
+                            if (seatsleft[c].ToString() != "0")
                             {
                                 int se = int.Parse(seatsleft[c].ToString());
                                 se--;
@@ -195,9 +195,9 @@ namespace offlineproject
                     while (c < 10)
                     {
                         c++;
-                        if (obj.op4 == namecoll[i])
+                        if (obj.op4 == namecoll[c].ToString())
                         {
-                            if (seatsleft[c] != "0")
+                            if (seatsleft[c].ToString() != "0")
                             {
                                 int se = int.Parse(seatsleft[c].ToString());
                                 se--;
@@ -227,9 +227,9 @@ namespace offlineproject
                     while (c < 10)
                     {
                         c++;
-                        if (obj.op5 == namecoll[i])
+                        if (obj.op5 == namecoll[c].ToString())
                         {
-                            if (seatsleft[c] != "0")
+                            if (seatsleft[c].ToString() != "0")
                             {
                                 int se = int.Parse(seatsleft[c].ToString());
                                 se--;
@@ -259,9 +259,9 @@ namespace offlineproject
                     while (c < 10)
                     {
                         c++;
-                        if (obj.op6 == namecoll[i])
+                        if (obj.op6 == namecoll[c].ToString())
                         {
-                            if (seatsleft[c] != "0")
+                            if (seatsleft[c].ToString() != "0")
                             {
                                 int se = int.Parse(seatsleft[c].ToString());
                                 se--;
@@ -291,9 +291,9 @@ namespace offlineproject
                         while (c < 10)
                         {
                             c++;
-                            if (obj.op7 == namecoll[i])
+                            if (obj.op7 == namecoll[c].ToString())
                             {
-                                if (seatsleft[c] != "0")
+                                if (seatsleft[c].ToString() != "0")
                                 {
                                     int se = int.Parse(seatsleft[c].ToString());
                                     se--;
@@ -323,9 +323,9 @@ namespace offlineproject
                         while (c < 10)
                         {
                             c++;
-                            if (obj.op8 == namecoll[i])
+                            if (obj.op8 == namecoll[c].ToString())
                             {
-                                if (seatsleft[c] != "0")
+                                if (seatsleft[c].ToString() != "0")
                                 {
                                     int se = int.Parse(seatsleft[c].ToString());
                                     se--;
@@ -355,9 +355,9 @@ namespace offlineproject
                         while (c < 10)
                         {
                             c++;
-                            if (obj.op9 == namecoll[i])
+                            if (obj.op9 == namecoll[c].ToString())
                             {
-                                if (seatsleft[c] != "0")
+                                if (seatsleft[c].ToString() != "0")
                                 {
                                     int se = int.Parse(seatsleft[c].ToString());
                                     se--;
@@ -387,9 +387,9 @@ namespace offlineproject
                         while (c < 10)
                         {
                             c++;
-                            if (obj.op10 == namecoll[i])
+                            if (obj.op10 == namecoll[c].ToString())
                             {
-                                if (seatsleft[c] != "0")
+                                if (seatsleft[c].ToString() != "0")
                                 {
                                     int se = int.Parse(seatsleft[c].ToString());
                                     se--;

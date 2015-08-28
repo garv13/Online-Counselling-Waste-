@@ -101,6 +101,7 @@
     <Content Include="login.aspx" />
     <Content Include="Prefrences.aspx" />
     <Content Include="RegistrationPage.aspx" />
+    <Content Include="Show.aspx" />
     <Content Include="stlog.aspx" />
     <Content Include="style.css" />
     <Content Include="test.aspx" />
@@ -180,6 +181,13 @@
     </Compile>
     <Compile Include="RegistrationPage.aspx.designer.cs">
       <DependentUpon>RegistrationPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Show.aspx.cs">
+      <DependentUpon>Show.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Show.aspx.designer.cs">
+      <DependentUpon>Show.aspx</DependentUpon>
     </Compile>
     <Compile Include="stlog.aspx.cs">
       <DependentUpon>stlog.aspx</DependentUpon>

@@ -2,7 +2,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
-    <h2 class="pagetitle"> Welcome</h2>
+    <h2 class="pagetitle">Welcome</h2>
     <p >
         <asp:Image ID="Image1" runat="server" ImageUrl="~/images/img01.jpg" /> <h3> National University</h3>
     </p >

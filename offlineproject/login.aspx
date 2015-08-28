@@ -16,11 +16,11 @@
     <center>
        <table>
            <tr>
-               <td><b>Student Login ID</b></td>
+               <td><b>Roll Number</b>&nbsp;</td>
                <td><asp:TextBox ID="Textid" runat="server"></asp:TextBox></td>
 
                <td class="auto-style2">
-                   <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Enter Correct Login id" ControlToValidate="Textid" Display="Dynamic">*</asp:RequiredFieldValidator>
+                   
                </td>
 
            </tr>
@@ -32,11 +32,10 @@
                    <asp:TextBox ID="Textpwd" runat="server"></asp:TextBox>
                </td>
                <td class="auto-style2">
-                   <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ControlToValidate="Textpwd" ErrorMessage="Enter Correct Password">*</asp:RequiredFieldValidator>
                </td>
            </tr>
            <tr>
-               <td colspan="2"> <center><asp:Button ID="Button1" runat="server" Text="Login" CssClass="Button"></asp:Button></center></td>
+               <td colspan="2"> <center><asp:Button ID="Button1" runat="server" Text="Login" CssClass="Button" OnClick="Button1_Click"></asp:Button></center></td>
                <td class="auto-style2"> &nbsp;</td>
            </tr>
           
@@ -49,19 +48,16 @@
                <td><b>Phone Number</b></td>
                <td><asp:TextBox  runat="server" ID="txtph"></asp:TextBox></td>
                <td>
-                   <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="Enter Correct Number" ControlToValidate="txtph">*</asp:RequiredFieldValidator>
-                   <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ErrorMessage="Enter Correct Number" ControlToValidate="txtph" ValidationExpression="[0-9]{10}">*</asp:RegularExpressionValidator>
                </td>
            </tr>
            <tr>
                <td><b>Password</b></td>
                <td><asp:TextBox runat="server" ID="txtpwd2"></asp:TextBox></td>
                <td>
-                   <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="Enter Correct Password" ControlToValidate="txtpwd2">*</asp:RequiredFieldValidator>
                </td>
            </tr>
            <tr>
-               <td colspan="2"><center><asp:Button ID="Button3" runat="server" Text="Log In" CssClass="Button"></asp:Button>
+               <td colspan="2"><center><asp:Button ID="Button3" runat="server" Text="Log In" CssClass="Button" OnClick="Button3_Click"></asp:Button>
                    <br />
                    </center></td>
                <td>&nbsp;</td>
@@ -75,7 +71,6 @@
                <td colspan="2"> <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/RegistrationPage.aspx"><b>Not Regsitered , Click Here</b></asp:HyperLink></td>
            </tr>
        </table>
-        <asp:ValidationSummary ID="ValidationSummary1" runat="server"></asp:ValidationSummary>
        
 
    </center> 

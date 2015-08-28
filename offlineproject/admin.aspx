@@ -32,17 +32,17 @@
                     <td>
                         <asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="SqlDataSource1" DataTextField="name" DataValueField="name">
                         </asp:DropDownList>
-                            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:connect %>" SelectCommand="SELECT [name] FROM [College]"></asp:SqlDataSource>
+                            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:connection %>" SelectCommand="SELECT [name] FROM [College]"></asp:SqlDataSource>
 
                     </td>
                     <td>
                         <asp:DropDownList ID="DropDownList2" runat="server" DataSourceID="SqlDataSource2">
                         </asp:DropDownList>
-                        <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:connect %>" SelectCommand="SELECT [branch] FROM [College] WHERE ([seats] IS NOT NULL)"></asp:SqlDataSource>
+                        <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:connection %>" SelectCommand="SELECT [branch] FROM [College] WHERE ([seats] IS NOT NULL)"></asp:SqlDataSource>
                     </td>
                     <td>
                         <asp:TextBox ID="TextBox1" runat="server" ReadOnly="True" Text="<%$ RouteValue:SqlDataSource3 %>"></asp:TextBox>
-                        <asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:connect %>" SelectCommand="SELECT [seats] FROM [College] WHERE (([name] = @name) AND ([branch] = @branch))">
+                        <asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:connection %>" SelectCommand="SELECT [seats] FROM [College] WHERE (([name] = @name) AND ([branch] = @branch))">
                             <SelectParameters>
                                 <asp:ControlParameter ControlID="DropDownList1" Name="name" PropertyName="SelectedValue" Type="String" />
                                 <asp:ControlParameter ControlID="DropDownList2" Name="branch" PropertyName="SelectedValue" Type="String" />
@@ -50,8 +50,8 @@
                         </asp:SqlDataSource>
                     </td>
                     <td>
-                        <asp:TextBox ID="TextBox2" runat="server" Text="<%$ ConnectionStrings:connect %>"></asp:TextBox>
-                        <asp:SqlDataSource ID="SqlDataSource4" runat="server" ConnectionString="<%$ ConnectionStrings:connect %>" SelectCommand="SELECT [seats left] AS seats_left FROM [College] WHERE (([branch] = @branch) AND ([name] = @name))">
+                        <asp:TextBox ID="TextBox2" runat="server" Text="<%$ ConnectionStrings:connection %>"></asp:TextBox>
+                        <asp:SqlDataSource ID="SqlDataSource4" runat="server" ConnectionString="<%$ ConnectionStrings:connection %>" SelectCommand="SELECT [seats left] AS seats_left FROM [College] WHERE (([branch] = @branch) AND ([name] = @name))">
                             <SelectParameters>
                                 <asp:ControlParameter ControlID="DropDownList2" Name="branch" PropertyName="SelectedValue" Type="String" />
                                 <asp:ControlParameter ControlID="DropDownList1" Name="name" PropertyName="SelectedValue" Type="String" />
@@ -66,7 +66,8 @@
             <asp:Button ID="Button2" runat="server" OnClick="Button2_Click" Text="Add  New Item" ClientIDMode="AutoID" />
             <asp:Button ID="Button3" runat="server" OnClick="Button3_Click" Text="Delete College" ClientIDMode="AutoID" />
 
-        &nbsp;<br />
+        &nbsp;<asp:Button ID="Button4" runat="server" OnClick="resultCalc" Text="Button" />
+                <br />
         </div>
             </div>
 
@@ -110,7 +111,7 @@
                 </asp:TemplateField>
             </Columns>
         </asp:GridView>
-        <asp:SqlDataSource ID="SqlDataSource5" runat="server" ConnectionString="<%$ ConnectionStrings:connect %>" SelectCommand="SELECT [firstName], [rank], [allot], [selected] FROM [Student] ORDER BY [rank]"></asp:SqlDataSource>
+        <asp:SqlDataSource ID="SqlDataSource5" runat="server" ConnectionString="<%$ ConnectionStrings:connection %>" SelectCommand="SELECT [firstName], [rank], [allot], [selected] FROM [Student] ORDER BY [rank]"></asp:SqlDataSource>
         <asp:GridView ID="GridView2" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource6" Visible="false">
             <Columns>
                 <asp:TemplateField>
@@ -140,7 +141,7 @@
             </Columns>
         </asp:GridView>
 
-         <asp:SqlDataSource ID="SqlDataSource6" runat="server" ConnectionString="<%$ ConnectionStrings:connect %>" SelectCommand="SELECT [name], [seatsleft], [branch] FROM [College]"></asp:SqlDataSource>
+         <asp:SqlDataSource ID="SqlDataSource6" runat="server" ConnectionString="<%$ ConnectionStrings:connection %>" SelectCommand="SELECT [name], [seatsleft], [branch] FROM [College]"></asp:SqlDataSource>
 
          </form>
     

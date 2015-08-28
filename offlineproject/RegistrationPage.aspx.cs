@@ -5,6 +5,8 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Configuration;
+using System.Data.SqlClient;
 
 namespace offlineproject
 {
@@ -19,7 +21,7 @@ namespace offlineproject
             }
 
         }
-        protected void Button1_Click(object sender, EventArgs e)
+        protected void Button12_Click(object sender, EventArgs e)
         {
 
             bool isCaptchaValid = false;
@@ -30,14 +32,16 @@ namespace offlineproject
 
             if (isCaptchaValid)
             {
+                Random random = new Random();
+                string ra = Convert.ToString(random.Next(10, 10000));
                 lblMessage.Text = "Captcha Validation Success";
                 lblMessage.ForeColor = Color.Green;
-                //string s = ConfigurationManager.ConnectionStrings["connect"].ConnectionString; //using database through web.config file
-                //SqlConnection con = new SqlConnection(s);
-                // SqlCommand cmd = new SqlCommand("insert into UserDetail values('" + TextBox1.Text + "','" + TextBox2.Text + "','" + TextBox3.Text + "','" + TextBox4.Text + "','" + RadioButtonList1.SelectedItem.ToString() + "','" + TextBox6.Text + "','" + DropDownList1.SelectedItem.ToString() + "','" + TextBox7.Text + "','" + TextBox8.Text + "')", con);
-                // con.Open();
-                // cmd.ExecuteNonQuery();
-                // con.Close();
+                string s = ConfigurationManager.ConnectionStrings["connection"].ConnectionString; //using database through web.config file
+                SqlConnection con = new SqlConnection(s);
+                SqlCommand cmd = new SqlCommand("insert into student values('" + TextBox1.Text + "','" + TextBox2.Text + "','" + TextBox3.Text + "','" + TextBox8.Text + "','" + TextBox4.Text + "','" + RadioButtonList1.SelectedItem.ToString() + "','" + TextBox6.Text + "','" + DropDownList2.SelectedItem.ToString() + "','" + DropDownList1.SelectedItem.ToString() + "','" + TextBox7.Text + "', '" + ra + "' , '1' , '1' , '1')", con);
+                con.Open();
+                cmd.ExecuteNonQuery();
+                con.Close();
                 Response.Write("<script>alert('User Successfully Registered')</script>");
                 TextBox1.Text = "";
                 TextBox2.Text = "";
@@ -48,7 +52,8 @@ namespace offlineproject
                 txtCaptchaText.Text = "";
                 RadioButtonList1.ClearSelection();
                 DropDownList1.ClearSelection();
-                TextBox1.Focus();
+                Response.Redirect("Home.aspx");
+                //TextBox1.Focus();
             }
             else
             {
