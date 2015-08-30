@@ -77,328 +77,609 @@ namespace offlineproject
         {
             int count = name.Count;
             int coll = namecoll.Count;
+            int flag = 0;
             c = 0;
             for (int i = 0; i < count; i++)
             {
+                flag = 0;
                 if (allot[i].ToString() != "lol")
-                    break;
-                else
-                {
-                        obj = JsonConvert.DeserializeObject<collegeSelected>(selected[i].ToString());
-                    
-                        while (c<coll)
-                        {
-                            
-                            if (obj.op1 ==(namecoll[c].ToString()))
-                            {
-                                if (seatsleft[c].ToString() != "0")
-                                {
-                                    int se = int.Parse(seatsleft[c].ToString());
-                                    se--;
-                                    seatsleft[c] = se.ToString();
-                                    allot[i] = obj.op1;
-                                    break;
-                                }
-                              
-                            }
-                            else 
-                            {
-                                c++;
-                            }
-                        }
-                    
-                }
-            }
-            c = 0;
-            for (int i = 0; i < count; i++)
-            {
-                if (allot[i].ToString() != "lol")
-                    break;
-                else
-                {
+                    flag = 1;
                     obj = JsonConvert.DeserializeObject<collegeSelected>(selected[i].ToString());
-
-                    while (c<coll)
+                    while (c < coll)
                     {
-                        c++;
-                        if (obj.op2 == namecoll[c].ToString())
+                        if (flag==1)
                         {
-                            if (seatsleft[c].ToString() != "0")
-                            {
-                                int se = int.Parse(seatsleft[c].ToString());
-                                se--;
-                                seatsleft[c] = se.ToString();
-                                allot[i] = obj.op2;
-                                break;
-                            }
+                            break;
+                        }
+                        if (obj.op1 == (namecoll[c].ToString()))
+                        {
 
+                        if (seatsleft[c].ToString() != "0")
+                        {
+                            int se = int.Parse(seatsleft[c].ToString());
+                            se--;
+                            seatsleft[c] = se.ToString();
+                            allot[i] = obj.op1;
+                        }
+                       
+                            break;
                         }
                         else
                         {
                             c++;
                         }
                     }
-
-                }
             }
             c = 0;
             for (int i = 0; i < count; i++)
             {
+                flag = 0;
                 if (allot[i].ToString() != "lol")
-                    break;
-                else
+                    flag = 1;
+                obj = JsonConvert.DeserializeObject<collegeSelected>(selected[i].ToString());
+                while (c < coll)
                 {
-                    obj = JsonConvert.DeserializeObject<collegeSelected>(selected[i].ToString());
-
-                    while (c<coll)
+                    if (flag == 1)
                     {
-                        c++;
-                        if (obj.op3 == namecoll[c].ToString())
-                        {
-                            if (seatsleft[c].ToString() != "0")
-                            {
-                                int se = int.Parse(seatsleft[c].ToString());
-                                se--;
-                                seatsleft[c] = se.ToString();
-                                allot[i] = obj.op3;
-                                break;
-                            }
-
-                        }
-                        else
-                        {
-                            c++;
-                        }
-                    }
-
-                }
-            }
-            c = 0;
-            for (int i = 0; i < count; i++)
-            {
-                if (allot[i].ToString() != "lol")
-                    break;
-                else
-                {
-                    obj = JsonConvert.DeserializeObject<collegeSelected>(selected[i].ToString());
-
-                    while (c<coll)
-                    {
-                        c++;
-                        if (obj.op4 == namecoll[c].ToString())
-                        {
-                            if (seatsleft[c].ToString() != "0")
-                            {
-                                int se = int.Parse(seatsleft[c].ToString());
-                                se--;
-                                seatsleft[c] = se.ToString();
-                                allot[i] = obj.op4;
-                                break;
-                            }
-
-                        }
-                        else
-                        {
-                            c++;
-                        }
-                    }
-
-                }
-            }
-            c = 0;
-            for (int i = 0; i < count; i++)
-            {
-                if (allot[i].ToString() != "lol")
-                    break;
-                else
-                {
-                    obj = JsonConvert.DeserializeObject<collegeSelected>(selected[i].ToString());
-
-                    while (c<coll)
-                    {
-                        c++;
-                        if (obj.op5 == namecoll[c].ToString())
-                        {
-                            if (seatsleft[c].ToString() != "0")
-                            {
-                                int se = int.Parse(seatsleft[c].ToString());
-                                se--;
-                                seatsleft[c] = se.ToString();
-                                allot[i] = obj.op5;
-                                break;
-                            }
-
-                        }
-                        else
-                        {
-                            c++;
-                        }
-                    }
-
-                }
-            }
-            c = 0;
-            for (int i = 0; i < count; i++)
-            {
-                if (allot[i].ToString() != "lol")
-                    break;
-                else
-                {
-                    obj = JsonConvert.DeserializeObject<collegeSelected>(selected[i].ToString());
-
-                    while (c<coll)
-                    {
-                        c++;
-                        if (obj.op6 == namecoll[c].ToString())
-                        {
-                            if (seatsleft[c].ToString() != "0")
-                            {
-                                int se = int.Parse(seatsleft[c].ToString());
-                                se--;
-                                seatsleft[c] = se.ToString();
-                                allot[i] = obj.op6;
-                                break;
-                            }
-
-                        }
-                        else
-                        {
-                            c++;
-                        }
-                    }
-
-                }
-            }
-            c = 0;
-                for (int i = 0; i < count; i++)
-                {
-                    if (allot[i].ToString() != "lol")
                         break;
+                    }
+                    if (obj.op2 == (namecoll[c].ToString()))
+                    {
+
+                        if (seatsleft[c].ToString() != "0")
+                        {
+                            int se = int.Parse(seatsleft[c].ToString());
+                            se--;
+                            seatsleft[c] = se.ToString();
+                            allot[i] = obj.op1;
+                        }
+
+                        break;
+                    }
                     else
                     {
-                        obj = JsonConvert.DeserializeObject<collegeSelected>(selected[i].ToString());
-
-                        while (c<coll)
-                        {
-                            c++;
-                            if (obj.op7 == namecoll[c].ToString())
-                            {
-                                if (seatsleft[c].ToString() != "0")
-                                {
-                                    int se = int.Parse(seatsleft[c].ToString());
-                                    se--;
-                                    seatsleft[c] = se.ToString();
-                                    allot[i] = obj.op7;
-                                    break;
-                                }
-
-                            }
-                            else
-                            {
-                                c++;
-                            }
-                        }
-
+                        c++;
                     }
                 }
-                c = 0;
-                for (int i = 0; i < count; i++)
+            }
+            c = 0; for (int i = 0; i < count; i++)
+            {
+                flag = 0;
+                if (allot[i].ToString() != "lol")
+                    flag = 1;
+                obj = JsonConvert.DeserializeObject<collegeSelected>(selected[i].ToString());
+                while (c < coll)
                 {
-                    if (allot[i].ToString() != "lol")
+                    if (flag == 1)
+                    {
                         break;
+                    }
+                    if (obj.op3 == (namecoll[c].ToString()))
+                    {
+
+                        if (seatsleft[c].ToString() != "0")
+                        {
+                            int se = int.Parse(seatsleft[c].ToString());
+                            se--;
+                            seatsleft[c] = se.ToString();
+                            allot[i] = obj.op1;
+                        }
+
+                        break;
+                    }
                     else
                     {
-                        obj = JsonConvert.DeserializeObject<collegeSelected>(selected[i].ToString());
-
-                        while (c<coll)
-                        {
-                            c++;
-                            if (obj.op8 == namecoll[c].ToString())
-                            {
-                                if (seatsleft[c].ToString() != "0")
-                                {
-                                    int se = int.Parse(seatsleft[c].ToString());
-                                    se--;
-                                    seatsleft[c] = se.ToString();
-                                    allot[i] = obj.op8;
-                                    break;
-                                }
-
-                            }
-                            else
-                            {
-                                c++;
-                            }
-                        }
-
+                        c++;
                     }
                 }
-                c = 0;
-                for (int i = 0; i < count; i++)
+            }
+            c = 0; for (int i = 0; i < count; i++)
+            {
+                flag = 0;
+                if (allot[i].ToString() != "lol")
+                    flag = 1;
+                obj = JsonConvert.DeserializeObject<collegeSelected>(selected[i].ToString());
+                while (c < coll)
                 {
-                    if (allot[i].ToString() != "lol")
+                    if (flag == 1)
+                    {
                         break;
+                    }
+                    if (obj.op4 == (namecoll[c].ToString()))
+                    {
+
+                        if (seatsleft[c].ToString() != "0")
+                        {
+                            int se = int.Parse(seatsleft[c].ToString());
+                            se--;
+                            seatsleft[c] = se.ToString();
+                            allot[i] = obj.op1;
+                        }
+
+                        break;
+                    }
                     else
                     {
-                        obj = JsonConvert.DeserializeObject<collegeSelected>(selected[i].ToString());
-
-                        while (c<coll)
-                        {
-                            c++;
-                            if (obj.op9 == namecoll[c].ToString())
-                            {
-                                if (seatsleft[c].ToString() != "0")
-                                {
-                                    int se = int.Parse(seatsleft[c].ToString());
-                                    se--;
-                                    seatsleft[c] = se.ToString();
-                                    allot[i] = obj.op9;
-                                    break;
-                                }
-
-                            }
-                            else
-                            {
-                                c++;
-                            }
-                        }
-
+                        c++;
                     }
                 }
-                c = 0;
-                for (int i = 0; i < count; i++)
+            }
+            c = 0; for (int i = 0; i < count; i++)
+            {
+                flag = 0;
+                if (allot[i].ToString() != "lol")
+                    flag = 1;
+                obj = JsonConvert.DeserializeObject<collegeSelected>(selected[i].ToString());
+                while (c < coll)
                 {
-                    if (allot[i].ToString() != "lol")
+                    if (flag == 1)
+                    {
                         break;
+                    }
+                    if (obj.op5 == (namecoll[c].ToString()))
+                    {
+
+                        if (seatsleft[c].ToString() != "0")
+                        {
+                            int se = int.Parse(seatsleft[c].ToString());
+                            se--;
+                            seatsleft[c] = se.ToString();
+                            allot[i] = obj.op1;
+                        }
+
+                        break;
+                    }
                     else
                     {
-                        obj = JsonConvert.DeserializeObject<collegeSelected>(selected[i].ToString());
-
-                        while (c<coll)
-                        {
-                            c++;
-                            if (obj.op10 == namecoll[c].ToString())
-                            {
-                                if (seatsleft[c].ToString() != "0")
-                                {
-                                    int se = int.Parse(seatsleft[c].ToString());
-                                    se--;
-                                    seatsleft[c] = se.ToString();
-                                    allot[i] = obj.op10;
-                                    break;
-                                }
-
-                            }
-                            else
-                            {
-                                c++;
-                            }
-                        }
-
+                        c++;
                     }
                 }
+            }
+            c = 0; for (int i = 0; i < count; i++)
+            {
+                flag = 0;
+                if (allot[i].ToString() != "lol")
+                    flag = 1;
+                obj = JsonConvert.DeserializeObject<collegeSelected>(selected[i].ToString());
+                while (c < coll)
+                {
+                    if (flag == 1)
+                    {
+                        break;
+                    }
+                    if (obj.op6 == (namecoll[c].ToString()))
+                    {
 
-                string s = ConfigurationManager.ConnectionStrings["connection"].ConnectionString;
+                        if (seatsleft[c].ToString() != "0")
+                        {
+                            int se = int.Parse(seatsleft[c].ToString());
+                            se--;
+                            seatsleft[c] = se.ToString();
+                            allot[i] = obj.op1;
+                        }
+
+                        break;
+                    }
+                    else
+                    {
+                        c++;
+                    }
+                }
+            }
+            c = 0; for (int i = 0; i < count; i++)
+            {
+                flag = 0;
+                if (allot[i].ToString() != "lol")
+                    flag = 1;
+                obj = JsonConvert.DeserializeObject<collegeSelected>(selected[i].ToString());
+                while (c < coll)
+                {
+                    if (flag == 1)
+                    {
+                        break;
+                    }
+                    if (obj.op7 == (namecoll[c].ToString()))
+                    {
+
+                        if (seatsleft[c].ToString() != "0")
+                        {
+                            int se = int.Parse(seatsleft[c].ToString());
+                            se--;
+                            seatsleft[c] = se.ToString();
+                            allot[i] = obj.op1;
+                        }
+
+                        break;
+                    }
+                    else
+                    {
+                        c++;
+                    }
+                }
+            }
+            c = 0; for (int i = 0; i < count; i++)
+            {
+                flag = 0;
+                if (allot[i].ToString() != "lol")
+                    flag = 1;
+                obj = JsonConvert.DeserializeObject<collegeSelected>(selected[i].ToString());
+                while (c < coll)
+                {
+                    if (flag == 1)
+                    {
+                        break;
+                    }
+                    if (obj.op8 == (namecoll[c].ToString()))
+                    {
+
+                        if (seatsleft[c].ToString() != "0")
+                        {
+                            int se = int.Parse(seatsleft[c].ToString());
+                            se--;
+                            seatsleft[c] = se.ToString();
+                            allot[i] = obj.op1;
+                        }
+
+                        break;
+                    }
+                    else
+                    {
+                        c++;
+                    }
+                }
+            }
+            c = 0; for (int i = 0; i < count; i++)
+            {
+                flag = 0;
+                if (allot[i].ToString() != "lol")
+                    flag = 1;
+                obj = JsonConvert.DeserializeObject<collegeSelected>(selected[i].ToString());
+                while (c < coll)
+                {
+                    if (flag == 1)
+                    {
+                        break;
+                    }
+                    if (obj.op9 == (namecoll[c].ToString()))
+                    {
+
+                        if (seatsleft[c].ToString() != "0")
+                        {
+                            int se = int.Parse(seatsleft[c].ToString());
+                            se--;
+                            seatsleft[c] = se.ToString();
+                            allot[i] = obj.op1;
+                        }
+
+                        break;
+                    }
+                    else
+                    {
+                        c++;
+                    }
+                }
+            }
+            c = 0; for (int i = 0; i < count; i++)
+            {
+                flag = 0;
+                if (allot[i].ToString() != "lol")
+                    flag = 1;
+                obj = JsonConvert.DeserializeObject<collegeSelected>(selected[i].ToString());
+                while (c < coll)
+                {
+                    if (flag == 1)
+                    {
+                        break;
+                    }
+                    if (obj.op10 == (namecoll[c].ToString()))
+                    {
+
+                        if (seatsleft[c].ToString() != "0")
+                        {
+                            int se = int.Parse(seatsleft[c].ToString());
+                            se--;
+                            seatsleft[c] = se.ToString();
+                            allot[i] = obj.op1;
+                        }
+
+                        break;
+                    }
+                    else
+                    {
+                        c++;
+                    }
+                }
+            }
+            c = 0;
+            //for (int i = 0; i < count; i++)
+            //{
+            //    if (allot[i].ToString() != "lol")
+            //        break;
+            //    else
+            //    {
+            //        obj = JsonConvert.DeserializeObject<collegeSelected>(selected[i].ToString());
+
+            //        while (c<coll)
+            //        {
+            //            c++;
+            //            if (obj.op2 == namecoll[c].ToString())
+            //            {
+            //                if (seatsleft[c].ToString() != "0")
+            //                {
+            //                    int se = int.Parse(seatsleft[c].ToString());
+            //                    se--;
+            //                    seatsleft[c] = se.ToString();
+            //                    allot[i] = obj.op2;
+            //                    break;
+            //                }
+
+            //            }
+            //            else
+            //            {
+            //                c++;
+            //            }
+            //        }
+
+            //    }
+            //}
+            //c = 0;
+            //for (int i = 0; i < count; i++)
+            //{
+            //    if (allot[i].ToString() != "lol")
+            //        break;
+            //    else
+            //    {
+            //        obj = JsonConvert.DeserializeObject<collegeSelected>(selected[i].ToString());
+
+            //        while (c<coll)
+            //        {
+            //            c++;
+            //            if (obj.op3 == namecoll[c].ToString())
+            //            {
+            //                if (seatsleft[c].ToString() != "0")
+            //                {
+            //                    int se = int.Parse(seatsleft[c].ToString());
+            //                    se--;
+            //                    seatsleft[c] = se.ToString();
+            //                    allot[i] = obj.op3;
+            //                    break;
+            //                }
+
+            //            }
+            //            else
+            //            {
+            //                c++;
+            //            }
+            //        }
+
+            //    }
+            //}
+            //c = 0;
+            //for (int i = 0; i < count; i++)
+            //{
+            //    if (allot[i].ToString() != "lol")
+            //        break;
+            //    else
+            //    {
+            //        obj = JsonConvert.DeserializeObject<collegeSelected>(selected[i].ToString());
+
+            //        while (c<coll)
+            //        {
+            //            c++;
+            //            if (obj.op4 == namecoll[c].ToString())
+            //            {
+            //                if (seatsleft[c].ToString() != "0")
+            //                {
+            //                    int se = int.Parse(seatsleft[c].ToString());
+            //                    se--;
+            //                    seatsleft[c] = se.ToString();
+            //                    allot[i] = obj.op4;
+            //                    break;
+            //                }
+
+            //            }
+            //            else
+            //            {
+            //                c++;
+            //            }
+            //        }
+
+            //    }
+            //}
+            //c = 0;
+            //for (int i = 0; i < count; i++)
+            //{
+            //    if (allot[i].ToString() != "lol")
+            //        break;
+            //    else
+            //    {
+            //        obj = JsonConvert.DeserializeObject<collegeSelected>(selected[i].ToString());
+
+            //        while (c<coll)
+            //        {
+            //            c++;
+            //            if (obj.op5 == namecoll[c].ToString())
+            //            {
+            //                if (seatsleft[c].ToString() != "0")
+            //                {
+            //                    int se = int.Parse(seatsleft[c].ToString());
+            //                    se--;
+            //                    seatsleft[c] = se.ToString();
+            //                    allot[i] = obj.op5;
+            //                    break;
+            //                }
+
+            //            }
+            //            else
+            //            {
+            //                c++;
+            //            }
+            //        }
+
+            //    }
+            //}
+            //c = 0;
+            //for (int i = 0; i < count; i++)
+            //{
+            //    if (allot[i].ToString() != "lol")
+            //        break;
+            //    else
+            //    {
+            //        obj = JsonConvert.DeserializeObject<collegeSelected>(selected[i].ToString());
+
+            //        while (c<coll)
+            //        {
+            //            c++;
+            //            if (obj.op6 == namecoll[c].ToString())
+            //            {
+            //                if (seatsleft[c].ToString() != "0")
+            //                {
+            //                    int se = int.Parse(seatsleft[c].ToString());
+            //                    se--;
+            //                    seatsleft[c] = se.ToString();
+            //                    allot[i] = obj.op6;
+            //                    break;
+            //                }
+
+            //            }
+            //            else
+            //            {
+            //                c++;
+            //            }
+            //        }
+
+            //    }
+            //}
+            //c = 0;
+            //    for (int i = 0; i < count; i++)
+            //    {
+            //        if (allot[i].ToString() != "lol")
+            //            break;
+            //        else
+            //        {
+            //            obj = JsonConvert.DeserializeObject<collegeSelected>(selected[i].ToString());
+
+            //            while (c<coll)
+            //            {
+            //                c++;
+            //                if (obj.op7 == namecoll[c].ToString())
+            //                {
+            //                    if (seatsleft[c].ToString() != "0")
+            //                    {
+            //                        int se = int.Parse(seatsleft[c].ToString());
+            //                        se--;
+            //                        seatsleft[c] = se.ToString();
+            //                        allot[i] = obj.op7;
+            //                        break;
+            //                    }
+
+            //                }
+            //                else
+            //                {
+            //                    c++;
+            //                }
+            //            }
+
+            //        }
+            //    }
+            //    c = 0;
+            //    for (int i = 0; i < count; i++)
+            //    {
+            //        if (allot[i].ToString() != "lol")
+            //            break;
+            //        else
+            //        {
+            //            obj = JsonConvert.DeserializeObject<collegeSelected>(selected[i].ToString());
+
+            //            while (c<coll)
+            //            {
+            //                c++;
+            //                if (obj.op8 == namecoll[c].ToString())
+            //                {
+            //                    if (seatsleft[c].ToString() != "0")
+            //                    {
+            //                        int se = int.Parse(seatsleft[c].ToString());
+            //                        se--;
+            //                        seatsleft[c] = se.ToString();
+            //                        allot[i] = obj.op8;
+            //                        break;
+            //                    }
+
+            //                }
+            //                else
+            //                {
+            //                    c++;
+            //                }
+            //            }
+
+            //        }
+            //    }
+            //    c = 0;
+            //    for (int i = 0; i < count; i++)
+            //    {
+            //        if (allot[i].ToString() != "lol")
+            //            break;
+            //        else
+            //        {
+            //            obj = JsonConvert.DeserializeObject<collegeSelected>(selected[i].ToString());
+
+            //            while (c<coll)
+            //            {
+            //                c++;
+            //                if (obj.op9 == namecoll[c].ToString())
+            //                {
+            //                    if (seatsleft[c].ToString() != "0")
+            //                    {
+            //                        int se = int.Parse(seatsleft[c].ToString());
+            //                        se--;
+            //                        seatsleft[c] = se.ToString();
+            //                        allot[i] = obj.op9;
+            //                        break;
+            //                    }
+
+            //                }
+            //                else
+            //                {
+            //                    c++;
+            //                }
+            //            }
+
+            //        }
+            //    }
+            //    c = 0;
+            //    for (int i = 0; i < count; i++)
+            //    {
+            //        if (allot[i].ToString() != "lol")
+            //            break;
+            //        else
+            //        {
+            //            obj = JsonConvert.DeserializeObject<collegeSelected>(selected[i].ToString());
+
+            //            while (c<coll)
+            //            {
+            //                c++;
+            //                if (obj.op10 == namecoll[c].ToString())
+            //                {
+            //                    if (seatsleft[c].ToString() != "0")
+            //                    {
+            //                        int se = int.Parse(seatsleft[c].ToString());
+            //                        se--;
+            //                        seatsleft[c] = se.ToString();
+            //                        allot[i] = obj.op10;
+            //                        break;
+            //                    }
+
+            //                }
+            //                else
+            //                {
+            //                    c++;
+            //                }
+            //            }
+
+            //        }
+            //    }
+
+            string s = ConfigurationManager.ConnectionStrings["connection"].ConnectionString;
                 SqlConnection con = new SqlConnection(s);
               
             for (int i = 0; i < count; i++)
