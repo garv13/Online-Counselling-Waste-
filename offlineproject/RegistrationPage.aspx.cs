@@ -38,7 +38,7 @@ namespace offlineproject
                 lblMessage.ForeColor = Color.Green;
                 string s = ConfigurationManager.ConnectionStrings["connection"].ConnectionString; //using database through web.config file
                 SqlConnection con = new SqlConnection(s);
-                SqlCommand cmd = new SqlCommand("insert into student values('" + TextBox1.Text + "','" + TextBox2.Text + "','" + TextBox3.Text + "','" + TextBox8.Text + "','" + TextBox4.Text + "','" + RadioButtonList1.SelectedItem.ToString() + "','" + TextBox6.Text + "','" + DropDownList2.SelectedItem.ToString() + "','" + DropDownList1.SelectedItem.ToString() + "','" + TextBox7.Text + "', '" + ra + "' , '1' , '1' , '1')", con);
+                SqlCommand cmd = new SqlCommand("insert into student values('" + TextBox1.Text + "','" + TextBox2.Text + "','" + TextBox3.Text + "','" + TextBox8.Text + "','" + TextBox4.Text + "','" + RadioButtonList1.SelectedItem.ToString() + "','" + TextBox6.Text + "','" + DropDownList2.SelectedItem.ToString() + "','" + DropDownList1.SelectedItem.ToString() + "','" + TextBox7.Text + "', '" + ra + "' , 'lol' , '1' , '1')", con);
                 con.Open();
                 cmd.ExecuteNonQuery();
                 con.Close();

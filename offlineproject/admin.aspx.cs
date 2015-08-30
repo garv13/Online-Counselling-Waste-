@@ -76,16 +76,17 @@ namespace offlineproject
         protected void resultCalc(object sender, EventArgs e)
         {
             int count = name.Count;
+            int coll = namecoll.Count;
             c = 0;
             for (int i = 0; i < count; i++)
             {
-                if (allot[i].ToString() != "")
+                if (allot[i].ToString() != "lol")
                     break;
                 else
                 {
                         obj = JsonConvert.DeserializeObject<collegeSelected>(selected[i].ToString());
                     
-                        while (c<10)
+                        while (c<coll)
                         {
                             
                             if (obj.op1 ==(namecoll[c].ToString()))
@@ -111,13 +112,13 @@ namespace offlineproject
             c = 0;
             for (int i = 0; i < count; i++)
             {
-                if (allot[i] != null)
+                if (allot[i].ToString() != "lol")
                     break;
                 else
                 {
                     obj = JsonConvert.DeserializeObject<collegeSelected>(selected[i].ToString());
 
-                    while (c < 10)
+                    while (c<coll)
                     {
                         c++;
                         if (obj.op2 == namecoll[c].ToString())
@@ -143,13 +144,13 @@ namespace offlineproject
             c = 0;
             for (int i = 0; i < count; i++)
             {
-                if (allot[i] != null)
+                if (allot[i].ToString() != "lol")
                     break;
                 else
                 {
                     obj = JsonConvert.DeserializeObject<collegeSelected>(selected[i].ToString());
 
-                    while (c < 10)
+                    while (c<coll)
                     {
                         c++;
                         if (obj.op3 == namecoll[c].ToString())
@@ -175,13 +176,13 @@ namespace offlineproject
             c = 0;
             for (int i = 0; i < count; i++)
             {
-                if (allot[i] != null)
+                if (allot[i].ToString() != "lol")
                     break;
                 else
                 {
                     obj = JsonConvert.DeserializeObject<collegeSelected>(selected[i].ToString());
 
-                    while (c < 10)
+                    while (c<coll)
                     {
                         c++;
                         if (obj.op4 == namecoll[c].ToString())
@@ -207,13 +208,13 @@ namespace offlineproject
             c = 0;
             for (int i = 0; i < count; i++)
             {
-                if (allot[i] != null)
+                if (allot[i].ToString() != "lol")
                     break;
                 else
                 {
                     obj = JsonConvert.DeserializeObject<collegeSelected>(selected[i].ToString());
 
-                    while (c < 10)
+                    while (c<coll)
                     {
                         c++;
                         if (obj.op5 == namecoll[c].ToString())
@@ -239,13 +240,13 @@ namespace offlineproject
             c = 0;
             for (int i = 0; i < count; i++)
             {
-                if (allot[i] != null)
+                if (allot[i].ToString() != "lol")
                     break;
                 else
                 {
                     obj = JsonConvert.DeserializeObject<collegeSelected>(selected[i].ToString());
 
-                    while (c < 10)
+                    while (c<coll)
                     {
                         c++;
                         if (obj.op6 == namecoll[c].ToString())
@@ -271,13 +272,13 @@ namespace offlineproject
             c = 0;
                 for (int i = 0; i < count; i++)
                 {
-                    if (allot[i] != null)
+                    if (allot[i].ToString() != "lol")
                         break;
                     else
                     {
                         obj = JsonConvert.DeserializeObject<collegeSelected>(selected[i].ToString());
 
-                        while (c < 10)
+                        while (c<coll)
                         {
                             c++;
                             if (obj.op7 == namecoll[c].ToString())
@@ -303,13 +304,13 @@ namespace offlineproject
                 c = 0;
                 for (int i = 0; i < count; i++)
                 {
-                    if (allot[i] != null)
+                    if (allot[i].ToString() != "lol")
                         break;
                     else
                     {
                         obj = JsonConvert.DeserializeObject<collegeSelected>(selected[i].ToString());
 
-                        while (c < 10)
+                        while (c<coll)
                         {
                             c++;
                             if (obj.op8 == namecoll[c].ToString())
@@ -335,13 +336,13 @@ namespace offlineproject
                 c = 0;
                 for (int i = 0; i < count; i++)
                 {
-                    if (allot[i] != null)
+                    if (allot[i].ToString() != "lol")
                         break;
                     else
                     {
                         obj = JsonConvert.DeserializeObject<collegeSelected>(selected[i].ToString());
 
-                        while (c < 10)
+                        while (c<coll)
                         {
                             c++;
                             if (obj.op9 == namecoll[c].ToString())
@@ -367,13 +368,13 @@ namespace offlineproject
                 c = 0;
                 for (int i = 0; i < count; i++)
                 {
-                    if (allot[i] != null)
+                    if (allot[i].ToString() != "lol")
                         break;
                     else
                     {
                         obj = JsonConvert.DeserializeObject<collegeSelected>(selected[i].ToString());
 
-                        while (c < 10)
+                        while (c<coll)
                         {
                             c++;
                             if (obj.op10 == namecoll[c].ToString())
@@ -411,7 +412,7 @@ namespace offlineproject
             }
 
            
-                for (int j = 0; j < 39; j++)
+                for (int j = 0; j < coll; j++)
                 {
                 SqlCommand cmd1 = new SqlCommand("update College set seatsleft=@seatleft where name=@name", con);
                 con.Open();
