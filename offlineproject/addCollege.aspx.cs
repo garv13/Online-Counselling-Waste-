@@ -59,7 +59,7 @@ namespace offlineproject
          {
              main.Visible = false;
              coll.Visible = true;
-             string s = ConfigurationManager.ConnectionStrings["connect"].ConnectionString;
+             string s = ConfigurationManager.ConnectionStrings["connection"].ConnectionString;
              SqlConnection con = new SqlConnection(s);
              SqlCommand cmd = new SqlCommand("Insert into College values(@name,@seats,@branch,@seatsleft)", con);
              cmd.Parameters.AddWithValue("@name", nameColl.Text);
@@ -94,7 +94,7 @@ namespace offlineproject
         protected void Button10_Click(object sender, EventArgs e)
         {
 
-            string s = ConfigurationManager.ConnectionStrings["connect"].ConnectionString;
+            string s = ConfigurationManager.ConnectionStrings["connection"].ConnectionString;
             SqlConnection con = new SqlConnection(s);
             SqlCommand cmd = new SqlCommand("insert into College values(@seats,@name,@branch,@seatsleft)", con);
             cmd.Parameters.AddWithValue("@seats", seats.Text);
@@ -148,7 +148,7 @@ namespace offlineproject
             c.op9 = "lol9";
             c.op10 = "lol0";
           string json = JsonConvert.SerializeObject(c);
-          string s = ConfigurationManager.ConnectionStrings["connect"].ConnectionString;
+          string s = ConfigurationManager.ConnectionStrings["connection"].ConnectionString;
         //  int a = 1;
           SqlConnection con = new SqlConnection(s);
           SqlCommand cmd = new SqlCommand("insert into Student values(@rollno,@firstName,@lastName,@age,@mobile,@email,@rank,@allot,@freeze,@selected)", con);

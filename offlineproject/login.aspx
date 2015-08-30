@@ -29,7 +29,7 @@
                   <b>Password</b>
                </td>
                <td>
-                   <asp:TextBox ID="Textpwd" runat="server"></asp:TextBox>
+                   <asp:TextBox ID="Textpwd" runat="server" TextMode="Password"></asp:TextBox>
                </td>
                <td class="auto-style2">
                </td>
@@ -52,7 +52,7 @@
            </tr>
            <tr>
                <td><b>Password</b></td>
-               <td><asp:TextBox runat="server" ID="txtpwd2"></asp:TextBox></td>
+               <td><asp:TextBox runat="server" ID="txtpwd2" TextMode="Password"></asp:TextBox></td>
                <td>
                </td>
            </tr>

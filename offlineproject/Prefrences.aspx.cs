@@ -28,53 +28,53 @@ namespace offlineproject
             {
                 if (Label1.Text.Equals(""))
                 {
-                    Label1.Text = "1." + p;
+                    Label1.Text = p;
                     break;
                 }
                 else if (Label2.Text.Equals(""))
                 {
-                    Label2.Text = "2." + p;
+                    Label2.Text = p;
                     break;
 
                 }
                 else if (Label3.Text.Equals(""))
                 {
-                    Label3.Text = "3." + p;
+                    Label3.Text = p;
                     break;
                 }
                 else if (Label4.Text.Equals(""))
                 {
-                    Label4.Text = "4." + p;
+                    Label4.Text = p;
                     break;
                 }
                 else if (Label5.Text.Equals(""))
                 {
-                    Label5.Text = "5." + p;
+                    Label5.Text = p;
                     break;
                 }
                 else if (Label6.Text.Equals(""))
                 {
-                    Label6.Text = "6." + p;
+                    Label6.Text =  p;
                     break;
                 }
                 else if (Label7.Text.Equals(""))
                 {
-                    Label7.Text = "7." + p;
+                    Label7.Text = p;
                     break;
                 }
                 else if (Label8.Text.Equals(""))
                 {
-                    Label8.Text = "8." + p;
+                    Label8.Text =  p;
                     break;
                 }
                 else if (Label9.Text.Equals(""))
                 {
-                    Label9.Text = "9." + p;
+                    Label9.Text = p;
                     break;
                 }
                 else if (Label10.Text.Equals(""))
                 {
-                    Label10.Text = "10." + p;
+                    Label10.Text =  p;
                     break;
                 }
                 else

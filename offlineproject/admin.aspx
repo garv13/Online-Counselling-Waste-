@@ -36,9 +36,9 @@
 
                     </td>
                     <td>
-                        <asp:DropDownList ID="DropDownList2" runat="server" DataSourceID="SqlDataSource2">
+                        <asp:DropDownList ID="DropDownList2" runat="server" DataSourceID="SqlDataSource2" DataTextField="branch" DataValueField="branch">
                         </asp:DropDownList>
-                        <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:connection %>" SelectCommand="SELECT [branch] FROM [College] WHERE ([seats] IS NOT NULL)"></asp:SqlDataSource>
+                        <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:connection %>" SelectCommand="SELECT [branch] FROM [College]"></asp:SqlDataSource>
                     </td>
                     <td>
                         <asp:TextBox ID="TextBox1" runat="server" ReadOnly="True" Text="<%$ RouteValue:SqlDataSource3 %>"></asp:TextBox>
@@ -50,7 +50,7 @@
                         </asp:SqlDataSource>
                     </td>
                     <td>
-                        <asp:TextBox ID="TextBox2" runat="server" Text="<%$ ConnectionStrings:connection %>"></asp:TextBox>
+                        <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
                         <asp:SqlDataSource ID="SqlDataSource4" runat="server" ConnectionString="<%$ ConnectionStrings:connection %>" SelectCommand="SELECT [seats left] AS seats_left FROM [College] WHERE (([branch] = @branch) AND ([name] = @name))">
                             <SelectParameters>
                                 <asp:ControlParameter ControlID="DropDownList2" Name="branch" PropertyName="SelectedValue" Type="String" />

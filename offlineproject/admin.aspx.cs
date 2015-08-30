@@ -24,18 +24,7 @@ namespace offlineproject
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            string s = ConfigurationManager.ConnectionStrings["connection"].ConnectionString;
-            SqlConnection con = new SqlConnection(s);
-            con.Open();
-            con.Close();
-
-            ArrayList name = new ArrayList();
-            ArrayList rank = new ArrayList();
-            ArrayList allot = new ArrayList();
-            ArrayList selected = new ArrayList();
-            ArrayList namecoll = new ArrayList();
-            ArrayList seatsleft = new ArrayList();
-            ArrayList branch = new ArrayList();
+          
             Label lbl;
             foreach (GridViewRow g in GridView1.Rows)
             {
@@ -71,9 +60,9 @@ namespace offlineproject
         {
             string s = ConfigurationManager.ConnectionStrings["connection"].ConnectionString;
             SqlConnection con = new SqlConnection(s);
-            SqlCommand cmd = new SqlCommand("Delete from College values('@seats') Where name = '@name' And branch = '@branch'", con);
-            cmd.Parameters.AddWithValue("name", DropDownList1.SelectedValue);
-            cmd.Parameters.AddWithValue("@branch", DropDownList2.SelectedValue);
+            SqlCommand cmd = new SqlCommand("Delete from College Where name = '@name' And branch = '@branch'", con);
+            cmd.Parameters.AddWithValue("@name", DropDownList1.SelectedValue.ToString());
+            cmd.Parameters.AddWithValue("@branch", DropDownList2.SelectedValue.ToString());
             con.Open();
             int i = cmd.ExecuteNonQuery();
             con.Close();
@@ -90,7 +79,7 @@ namespace offlineproject
             c = 0;
             for (int i = 0; i < count; i++)
             {
-                if (allot[i] != null)
+                if (allot[i].ToString() != "")
                     break;
                 else
                 {
@@ -98,8 +87,8 @@ namespace offlineproject
                     
                         while (c<10)
                         {
-                            c++;
-                            if (obj.op1 == namecoll[c].ToString())
+                            
+                            if (obj.op1 ==(namecoll[c].ToString()))
                             {
                                 if (seatsleft[c].ToString() != "0")
                                 {
@@ -407,8 +396,30 @@ namespace offlineproject
 
                     }
                 }
-            
 
+                string s = ConfigurationManager.ConnectionStrings["connection"].ConnectionString;
+                SqlConnection con = new SqlConnection(s);
+              
+            for (int i = 0; i < count; i++)
+            {
+                SqlCommand cmd = new SqlCommand("update Student set allot=@allot where rank=@rank", con);
+                con.Open();
+                cmd.Parameters.AddWithValue("@allot", allot[i]);
+                cmd.Parameters.AddWithValue("@rank", rank[i]);
+                cmd.ExecuteNonQuery();
+                con.Close();
+            }
+
+           
+                for (int j = 0; j < 39; j++)
+                {
+                SqlCommand cmd1 = new SqlCommand("update College set seatsleft=@seatleft where name=@name", con);
+                con.Open();
+                cmd1.Parameters.AddWithValue("@seatleft", seatsleft[j]);
+                cmd1.Parameters.AddWithValue("@name", namecoll[j]);
+                cmd1.ExecuteNonQuery();
+                con.Close();
+                }        
         }
     }
 }

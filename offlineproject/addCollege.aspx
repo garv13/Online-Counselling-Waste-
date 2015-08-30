@@ -28,13 +28,13 @@
                     <td>
                         <asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="SqlDataSource1" DataTextField="name">
                         </asp:DropDownList>
-                            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:connect %>" SelectCommand="SELECT [name] FROM [College]"></asp:SqlDataSource>
+                            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:connection %>" SelectCommand="SELECT [name] FROM [College]"></asp:SqlDataSource>
 
                     </td>
                     <td>
                         <asp:DropDownList ID="DropDownList2" runat="server" DataSourceID="SqlDataSource2" DataTextField="branch">
                         </asp:DropDownList>
-                        <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:connect %>" SelectCommand="SELECT [branch] FROM [College]"></asp:SqlDataSource>
+                        <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:connection %>" SelectCommand="SELECT [branch] FROM [College]"></asp:SqlDataSource>
                     </td>
                     <td>
                         <asp:TextBox ID="seatTotal" runat="server"></asp:TextBox>
@@ -81,13 +81,13 @@
                     <td>
                         <asp:DropDownList ID="DropDownList3" runat="server" DataSourceID="SqlDataSource5" DataTextField="name">
                         </asp:DropDownList>
-                            <asp:SqlDataSource ID="SqlDataSource5" runat="server" ConnectionString="<%$ ConnectionStrings:connect %>" SelectCommand="SELECT [name] FROM [College]"></asp:SqlDataSource>
+                            <asp:SqlDataSource ID="SqlDataSource5" runat="server" ConnectionString="<%$ ConnectionStrings:connection %>" SelectCommand="SELECT [name] FROM [College]"></asp:SqlDataSource>
 
                     </td>
                     <td>
                         <asp:DropDownList ID="DropDownList4" runat="server" DataSourceID="SqlDataSource6" DataTextField="branch">
                         </asp:DropDownList>
-                        <asp:SqlDataSource ID="SqlDataSource6" runat="server" ConnectionString="<%$ ConnectionStrings:connect %>" SelectCommand="SELECT [branch] FROM [College]"></asp:SqlDataSource>
+                        <asp:SqlDataSource ID="SqlDataSource6" runat="server" ConnectionString="<%$ ConnectionStrings:connection %>" SelectCommand="SELECT [branch] FROM [College]"></asp:SqlDataSource>
                     </td>
                     <td>
                         <asp:TextBox ID="newBranch" runat="server"></asp:TextBox>
