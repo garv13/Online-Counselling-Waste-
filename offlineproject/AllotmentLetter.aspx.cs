@@ -18,8 +18,15 @@ namespace offlineproject
             Label5.Text = Request.QueryString["gender"];
             Label6.Text = Request.QueryString["cat"];
             Label7.Text = Request.QueryString["instname"];
-            Label8.Text = Request.QueryString["branch"];
-            Label9.Text = Request.QueryString["choiceno"];
+            string str = Request.QueryString["instname"];
+            if(str!="lol"&&str!=null)
+            {
+                int index = str.IndexOf('-');
+                string result=str.Substring(index+1);
+                Label8.Text = result;
+            }
+             //Request.QueryString["instname"];
+            Label9.Text = "Not Applicable";
         }
     }
 }

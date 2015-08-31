@@ -63,16 +63,17 @@
                 </tr>
             </table>
             <div style="text-align:center;" >
-            <asp:Button ID="Button2" runat="server" OnClick="Button2_Click" Text="Add  New Item" ClientIDMode="AutoID" />
-            <asp:Button ID="Button3" runat="server" OnClick="Button3_Click" Text="Delete College" ClientIDMode="AutoID" />
+            <asp:Button ID="Button2" runat="server" OnClick="Button2_Click" Text="Add  New Item" ClientIDMode="AutoID" Visible="False" />
+            <asp:Button ID="Button3" runat="server" OnClick="Button3_Click" Text="Delete College" ClientIDMode="AutoID" Visible="False" />
 
-        &nbsp;<asp:Button ID="Button4" runat="server" OnClick="resultCalc" Text="Button" />
-                <br />
+        &nbsp;<br />
         </div>
             </div>
 
         
     <div id="calc" style="align-content:center;text-align:center">
+      
+        <asp:Button ID="Button4" runat="server" OnClick="resultCalc" Text="Allot Seats" />
       
         </div>
         <asp:GridView ID="GridView1" runat="server" Visible="False" AutoGenerateColumns="False" DataSourceID="SqlDataSource5">

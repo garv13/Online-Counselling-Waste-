@@ -77,6 +77,7 @@
       <DependentUpon>main.mdf</DependentUpon>
     </Content>
     <Content Include="CaptchaImage.aspx" />
+    <Content Include="Contact.aspx" />
     <Content Include="default.css" />
     <Content Include="forpass.aspx" />
     <Content Include="Home.aspx" />
@@ -148,6 +149,13 @@
       <DependentUpon>CaptchaImage.aspx</DependentUpon>
     </Compile>
     <Compile Include="collegeSelected.cs" />
+    <Compile Include="Contact.aspx.cs">
+      <DependentUpon>Contact.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Contact.aspx.designer.cs">
+      <DependentUpon>Contact.aspx</DependentUpon>
+    </Compile>
     <Compile Include="forpass.aspx.cs">
       <DependentUpon>forpass.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

@@ -2,5 +2,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Button" />
+    <p style="font-size:20px">
+        You Have Successfuly Filled Your Choice.Now You Can Logout And Wait For The Seat Allotment Result At Date Specified in Notices And News Section.If Any Error Persists During Choice Filling And Still You Are Seeing This Page,Please Contact Administrator or Development Team.
+    </p>
 </asp:Content>

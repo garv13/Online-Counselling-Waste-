@@ -24,7 +24,7 @@
 	        <br />
             <br />
             <asp:Label ID="Label1" runat="server" Text="Label" Font-Size="16px"></asp:Label>
-            <asp:Button ID="logb" runat="server" Text="" OnClick="logb_Click" CssClass="Button"/>
+            <asp:Button ID="logb" runat="server" Text="" OnClick="logb_Click" CssClass="Button" CausesValidation="False"/>
 	</div>
 </div>
 
@@ -35,8 +35,8 @@
 		<li class="current_page_item"><a href="Home.aspx">Home</a></li>
 		<li><a href="info.aspx">Information</a></li>
 		<!-- <li><a href="#">Photos</a></li> -->
-		<li><a href="#">About</a></li>
-		<li><a href="#">Contact</a></li>
+		<li><a href="about.aspx">About</a></li>
+		<li><a href="Contact.aspx">Contact</a></li>
 	</ul>
 </div>
 <!-- end menu -->
