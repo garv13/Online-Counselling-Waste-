@@ -7,7 +7,17 @@
     <title></title>
 </head>
 <body>
-    <form id="form1" runat="server" visible="true">
+     <form id="loginForm" runat="server">
+         <div id="login" runat="server">
+
+        <asp:TextBox ID="TextBox3" runat="server" placeholder="Username"></asp:TextBox>
+        <asp:TextBox ID="TextBox4" runat="server" placeholder="Password" type="password"></asp:TextBox>
+            
+        <asp:Button ID="Button13" runat="server" Text="Button" OnClick="Button5_Click" />
+
+    </div>
+    </form>
+    <form id="form1" runat="server" visible="false">
     <div id="main" runat="server" style="align-content:center; text-align:center; vertical-align:central;">
     
         <asp:Button ID="Button1" runat="server" OnClick="back" Text="Back" />
@@ -107,7 +117,7 @@
 
         </div>
         <p>
-            <asp:Button ID="Button12" runat="server" Text="Button" OnClick="prefrence" />
+            <%--<asp:Button ID="Button12" runat="server" Text="Button" OnClick="prefrence" />--%>
         </p>
     </form>
     <p>

@@ -14,7 +14,14 @@
     </style>
 </head>
 <body>
-    <form id="form1" runat="server">
+    <form id="loginForm" runat="server">
+    <div id="login" runat="server">
+        <asp:TextBox ID="TextBox3" runat="server" placeholder="Username"></asp:TextBox>
+        <asp:TextBox ID="TextBox4" runat="server" placeholder="Password" type="password"></asp:TextBox>
+        <asp:Button ID="Button5" runat="server" Text="Button" OnClick="Button5_Click" />
+    </div>
+    </form>
+    <form id="form1" runat="server" visible="false">
     <div>
         <h1 style="align-content:center; font-size:30px; font-family:'Segoe UI'; text-align:center">Admin Page</h1>   
     </div>
@@ -143,7 +150,6 @@
         </asp:GridView>
 
          <asp:SqlDataSource ID="SqlDataSource6" runat="server" ConnectionString="<%$ ConnectionStrings:connection %>" SelectCommand="SELECT [name], [seatsleft], [branch] FROM [College]"></asp:SqlDataSource>
-
          </form>
     
 </body>

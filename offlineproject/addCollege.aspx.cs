@@ -134,50 +134,63 @@ namespace offlineproject
             i = 1;
         }
 
-        protected void prefrence(object sender, EventArgs e)
+        //protected void prefrence(object sender, EventArgs e)
+        //{
+        //    collegeSelected c = new collegeSelected();
+        //    c.op1 = "lol1";
+        //    c.op2 = "lol2";
+        //    c.op3 = "lol3";
+        //    c.op4 = "lol4";
+        //    c.op5 = "lol5";
+        //    c.op6 = "lol6";
+        //    c.op7 = "lol7";
+        //    c.op8 = "lol8";
+        //    c.op9 = "lol9";
+        //    c.op10 = "lol0";
+        //  string json = JsonConvert.SerializeObject(c);
+        //  string s = ConfigurationManager.ConnectionStrings["connection"].ConnectionString;
+        ////  int a = 1;
+        //  SqlConnection con = new SqlConnection(s);
+        //  SqlCommand cmd = new SqlCommand("insert into Student values(@rollno,@firstName,@lastName,@age,@mobile,@email,@rank,@allot,@freeze,@selected)", con);
+        //  cmd.Parameters.AddWithValue("@rollno", "12345lowadlfsroll");
+        //  cmd.Parameters.AddWithValue("firstName", "firstlol");
+        //  cmd.Parameters.AddWithValue("@lastName", "lastlol");
+        //  cmd.Parameters.AddWithValue("@age", "21");
+        //  cmd.Parameters.AddWithValue("@rank", "123");
+        //  cmd.Parameters.AddWithValue("@selected",json);
+        //  cmd.Parameters.AddWithValue("@mobile", "1231");
+        //  cmd.Parameters.AddWithValue("@email", "8123kjsd");
+        //  cmd.Parameters.AddWithValue("@allot", "kjsd");
+        //  cmd.Parameters.AddWithValue("@freeze", "free" );
+        //  con.Open();
+        //  cmd.ExecuteNonQuery();
+        //  con.Close();
+        //  string r = null;
+        //  SqlCommand cmd1 = new SqlCommand("Select selected from Student", con);
+        //  con.Open();
+        //  SqlDataReader dr = cmd1.ExecuteReader();
+        //  if (dr.HasRows)
+        //  {
+        //      while (dr.Read())
+        //      {
+        //          r = dr[0].ToString();
+        //      }
+        //  }
+        //  con.Close();
+        //  var ob = JsonConvert.DeserializeObject<collegeSelected>(r);
+        //}
+        protected void Button5_Click(object sender, EventArgs e)
         {
-            collegeSelected c = new collegeSelected();
-            c.op1 = "lol1";
-            c.op2 = "lol2";
-            c.op3 = "lol3";
-            c.op4 = "lol4";
-            c.op5 = "lol5";
-            c.op6 = "lol6";
-            c.op7 = "lol7";
-            c.op8 = "lol8";
-            c.op9 = "lol9";
-            c.op10 = "lol0";
-          string json = JsonConvert.SerializeObject(c);
-          string s = ConfigurationManager.ConnectionStrings["connection"].ConnectionString;
-        //  int a = 1;
-          SqlConnection con = new SqlConnection(s);
-          SqlCommand cmd = new SqlCommand("insert into Student values(@rollno,@firstName,@lastName,@age,@mobile,@email,@rank,@allot,@freeze,@selected)", con);
-          cmd.Parameters.AddWithValue("@rollno", "12345lowadlfsroll");
-          cmd.Parameters.AddWithValue("firstName", "firstlol");
-          cmd.Parameters.AddWithValue("@lastName", "lastlol");
-          cmd.Parameters.AddWithValue("@age", "21");
-          cmd.Parameters.AddWithValue("@rank", "123");
-          cmd.Parameters.AddWithValue("@selected",json);
-          cmd.Parameters.AddWithValue("@mobile", "1231");
-          cmd.Parameters.AddWithValue("@email", "8123kjsd");
-          cmd.Parameters.AddWithValue("@allot", "kjsd");
-          cmd.Parameters.AddWithValue("@freeze", "free" );
-          con.Open();
-          cmd.ExecuteNonQuery();
-          con.Close();
-          string r = null;
-          SqlCommand cmd1 = new SqlCommand("Select selected from Student", con);
-          con.Open();
-          SqlDataReader dr = cmd1.ExecuteReader();
-          if (dr.HasRows)
-          {
-              while (dr.Read())
-              {
-                  r = dr[0].ToString();
-              }
-          }
-          con.Close();
-          var ob = JsonConvert.DeserializeObject<collegeSelected>(r);
+            if ((TextBox3.Text == "loltest") && (TextBox4.Text == "lol123"))
+            {
+                loginForm.Visible = false;
+                form1.Visible = true;
+
+            }
+            else
+            {
+                Response.Write("Wrong Password");
+            }
         }
     }
 }
